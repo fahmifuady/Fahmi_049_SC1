@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Images</title>
+</head>
+<body>
+    <form>
+        <label for="lname">Forms ID :</label>
+        <input type="text" id="lname" name="ldata" value="001" disabled><br>
+                
+        <label for="lname">Student ID:</label>
+        <input type="number" id="studentId" name="studentId" required><br>
+        
+        <label for="fname">Full Name:</label>
+        <input type="text" id="fname" name="fname" value="Your Full Name"><br>
+        
+        <label for="partners">Partners :</label>
+        <input type="text" id="partners" name="partners" value="Microsoft" readonly><br>
+ 
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email"><br>
+
+        <br>
+        <label for="lname">Gender :</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        
+        <br>
+        <label for="programmingLang">Programming language preferences:</label><br>
+        <select id="programmingLang" name="programmingLang">
+            <option value="Python">Python</option>
+            <option value="C++">C++</option>
+            <option value="PHP">PHP</option>
+            <option value="Java">Java</option>
+            <option value="Javascript">Javascript</option>
+            <option value="Kotlin">Kotlin</option>
+        </select><br>
+
+        <label for="range">new</label>
+        <input type="range" id="range" name="rentang" min="0" max="100" step="5">
+        <label for="range">pro</label><br>
+        
+        <br>
+        <label for="position">Position preferences:</label><br>
+        <select name="position" size="2" multiple>
+            <option value="seniorDev">seniorDev</option>
+            <option value="juniorDev">juniorDev</option>
+            <option value="seniorSysAdmin">seniorSysAdmin</option>
+            <option value="juniorSysAdmin">juniorSysAdmin</option>
+            <option value="seniorTester">seniorTester</option>
+            <option value="juniorTester">juniorTester</option>
+        </select><br>    
+        
+        <br>
+        <label for="Equipments">Support Equipments :</label><br>
+        <input type="checkbox" id="pc" name="pc" value="Bike">
+        <label for="pc"> I have a Personal Computer</label><br>
+        <input type="checkbox" id="laptop" name="laptop" value="Car">
+        <label for="laptop"> I have a Laptop</label><br>
+        <input type="checkbox" id="Mobile" name="Mobile" value="Boat">
+        <label for="Mobile"> I have a Mobile Devices</label><br>
+        
+        <br>
+        <label for="textarea">Continue Writing :</label><br>
+        <textarea name="message" rows="10" cols="30">
+        The cat was playing in the garden.    
+        </textarea><br>
+        
+        <br>
+        <label for="favcolor">Select your favorite color:</label><br>
+        <input type="color" id="favcolor" name="favcolor"><br>
+        
+        <br>
+        <label for="startWorkdate">Start Work/Interneship (date):</label><br>
+        <input type="date" id="startWorkdate" name="startWorkdate"><br>
+
+        <br>
+        <label for="startWorktime">Start Work/Interneship (time):</label><br>
+        <input type="time" id="startWorktime" name="startWorktime"> 
+        <label for="startWorktime"> to </label>
+        <input type="time" id="startWorktime" name="startWorktime"><br>
+
+        <br>
+        <label for="myPict">Upload ID:</label><br>
+        <input type="image" id="myimg" name="myimg"><br>
+
+        <br>
+        <label for="myfile">Upload supported documents:</label><br>
+        <input type="file" id="myfile" name="myfile"><br>
+
+        <br>
+        <input type="submit" value="Submit"><br>
+        </form>
+    </form>
+</body>
+</html>
