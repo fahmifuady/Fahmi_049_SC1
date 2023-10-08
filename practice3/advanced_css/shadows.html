@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* text-shadow property */
+      h1 {
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+      }
+      #double-shadow {
+        text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+      }
+      #triple-shadow {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+      }
+
+      /* simple box-shadow */
+      div.simple {
+        width: 300px;
+        height: 100px;
+        padding: 15px;
+        background-color: aquamarine;
+        box-shadow: 10px 10px 5px lightblue;
+      }
+
+      /* card box-shadow property */
+      div.card {
+        width: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+      }
+
+      div.header {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        font-size: 40px;
+      }
+
+      div.container {
+        padding: 10px;
+      }
+
+      /* polaroid box-shadow property */
+      div.polaroid {
+        width: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+      }
+
+      div.container {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Text-shadow effect!</h1>
+    <p>
+      The CSS text-shadow property applies shadow to text. In its simplest use
+      you only specify the:
+    </p>
+    <ul>
+      <li>horizontal shadow (2px)</li>
+      <li>vertical shadow (2px)</li>
+      <li>color to the shadow (black)</li>
+      <li>blur effect to the shadow (4px)</li>
+    </ul>
+    <br />
+    <h1>Multiple text-shadows</h1>
+    <p>
+      To add more than one shadow to the text, you can add a comma-separated
+      list of shadows. The following example shows a red and blue neon glow
+      shadow:
+    </p>
+    <ul>
+      <li>text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;</li>
+    </ul>
+    <h2 id="double-shadow">result</h2>
+
+    <p>
+      The following example shows a white text with black, blue, and darkblue
+      shadow:
+    </p>
+    <ul>
+      <li>
+        color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px
+        darkblue;
+      </li>
+    </ul>
+    <h2 id="triple-shadow">result</h2>
+
+    <h1>The box-shadow Property</h1>
+    <div class="simple">
+      A div element with a 5px blurred, lightblue box-shadow.
+    </div>
+
+    <h1>Create Cards</h1>
+    <p>The box-shadow property can be used to create paper-like cards:</p>
+
+    <div class="card">
+      <div class="header">
+        <h1>8</h1>
+      </div>
+
+      <div class="container">
+        <p>October 8, 2023</p>
+      </div>
+    </div>
+
+    <h1>Create Polaroid Images</h1>
+
+    <p>The box-shadow property can be used to create polaroid images:</p>
+
+    <div class="polaroid" style="margin-bottom: 100px">
+      <img src="crystallfly.png" alt="Norway" style="width: 100%" />
+      <div class="container">
+        <p>A Crystallfly, Myth.</p>
+      </div>
+    </div>
+  </body>
+</html>
