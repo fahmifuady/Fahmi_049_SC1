@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #myDIV {
+        background: url(../practice3/advanced_css/waterfall.png);
+        border: 1px solid;
+        padding: 50px;
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>JavaScript removeEventListener()</h2>
+
+    <div id="myDIV">
+      <p>
+        This div element has an onmousemove event handler that displays a random
+        number every time you move your mouse inside this image field.
+      </p>
+      <p>Click the button to control the div's event handler.</p>
+      <button onclick="attachEventHandler()" id="attach">Attach</button>
+      <button onclick="removeEventHandler()" id="remove">Remove</button>
+    </div>
+
+    <p id="demo"></p>
+
+    <script>
+      function randomFunction() {
+        document.getElementById("demo").innerHTML =
+          Math.random() + ", " + Math.random();
+      }
+
+      function attachEventHandler() {
+        document
+          .getElementById("myDIV")
+          .addEventListener("mousemove", randomFunction);
+        document.getElementById("attach").style.cursor = "not-allowed";
+        document.getElementById("attach").style.opacity = "0.6";
+        document.getElementById("remove").style.cursor = "pointer";
+        document.getElementById("remove").style.opacity = "1.0";
+      }
+      attachEventHandler();
+
+      function removeEventHandler() {
+        document
+          .getElementById("myDIV")
+          .removeEventListener("mousemove", randomFunction);
+        document.getElementById("remove").style.cursor = "not-allowed";
+        document.getElementById("remove").style.opacity = "0.6";
+        document.getElementById("attach").style.cursor = "pointer";
+        document.getElementById("attach").style.opacity = "1.0";
+      }
+    </script>
+  </body>
+</html>
