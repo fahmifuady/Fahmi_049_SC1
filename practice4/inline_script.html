@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline Javascript</title>
+  </head>
+
+  <body>
+    <button onclick="window.alert('Selamat datang di halaman Inline Script')">
+      Click Me
+    </button>
+    <br /><br />
+
+    <label for="input-text">
+      Isi kolom input dibawah ini, lalu lihat hasilnya pada console
+    </label>
+    <br />
+
+    <input type="text" oninput="console.log(this.value)" />
+  </body>
+</html>
