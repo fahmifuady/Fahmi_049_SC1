@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embedded Script</title>
+  </head>
+  <body>
+    <label for="tinggi">Rumus Luas Segitiga</label>
+    <br />
+    <input type="number" id="tinggi" placeholder="masukkan tinggi" />
+    <br />
+    <input type="number" id="alas" placeholder="masukkan alas" />
+    <br />
+    <button id="hitung">Hitung</button>
+    <label>Hasil: </label>
+    <label id="hasil">0</label>
+    <br />
+    <br />
+
+    <label for="nilai_angka">Konversi nilai angka ke huruf</label>
+    <br />
+    <input type="number" id="nilai_angka" placeholder="masukkan nilai angka" />
+    <br />
+    <button id="konversi">Konversi</button>
+    <label>Nilai huruf kamu adalah: </label>
+    <label id="hasil2">-</label>
+    <br />
+    <br />
+
+    <label for="nama_barang">Daftar Belanja</label>
+    <br />
+    <input type="text" id="nama_barang" placeholder="Nama barang" />
+    <input type="number" id="jumlah" placeholder="Jumlah" oninput="total()" />
+    <input type="number" id="harga" placeholder="Harga" oninput="total()" />
+    <input type="number" id="total" placeholder="Total" readonly />
+    <button onclick="cetak()">Cetak</button>
+    <br />
+    <br />
+
+    <script type="text/javascript">
+      window.alert("selamat datang di halaman embedded script");
+      document.getElementById("hitung").onclick = function () {
+        hitung_luas_segitiga();
+      };
+      document.getElementById("konversi").onclick = function () {
+        konversi();
+      };
+
+      function hitung_luas_segitiga() {
+        var a = parseFloat(document.getElementById("alas").value); // Menggunakan parseFloat untuk mengambil nilai dalam bentuk angka
+        var t = parseFloat(document.getElementById("tinggi").value); // Menggunakan parseFloat untuk mengambil nilai dalam bentuk angka
+        var hasil = 0.5 * a * t;
+        document.getElementById("hasil").innerHTML = hasil; // Menggunakan innerHTML untuk mengubah isi label "hasil"
+      }
+
+      function konversi() {
+        var nilai_angka = parseFloat(
+          document.getElementById("nilai_angka").value
+        ); // Menggunakan parseFloat untuk mengambil nilai dalam bentuk angka
+
+        if (nilai_angka >= 90) grade = "A";
+        else if (nilai_angka >= 80) grade = "B+";
+        else if (nilai_angka >= 70) grade = "B";
+        else if (nilai_angka >= 60) grade = "C+";
+        else if (nilai_angka >= 50) grade = "C";
+        else if (nilai_angka >= 40) grade = "D";
+        else if (nilai_angka >= 30) grade = "E";
+        else grade = "F";
+        document.getElementById("hasil2").innerHTML = grade;
+      }
+
+      function total() {
+        var jumlah = parseFloat(document.getElementById("jumlah").value);
+        var harga = parseFloat(document.getElementById("harga").value);
+        if (isNaN(jumlah) || isNaN(harga)) {
+          document.getElementById("total").value = "0";
+        } else {
+          document.getElementById("total").value = jumlah * harga;
+        }
+      }
+
+      function cetak() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>
