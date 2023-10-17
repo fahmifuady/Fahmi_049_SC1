@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Validation</h2>
+
+    <p>Please input a number between 1 and 10:</p>
+    <input id="numb" />
+    <button type="button" onclick="myFunction()">Submit</button>
+    <br />
+    <label>checker: </label>
+    <label id="demo"> </label>
+
+    <p>
+      If you click submit, without filling out the text field, your browser will
+      display an error message.
+    </p>
+
+    <form>
+      <input type="text" name="fname" required id="inputs" />
+      <input
+        type="submit"
+        value="Submit"
+        onclick="window.alert('Your input is ' + document.getElementById('inputs').value)"
+      />
+    </form>
+
+    <script>
+      function myFunction() {
+        // Get the value of the input field with id="numb"
+        let x = document.getElementById("numb").value;
+        // If x is Not a Number or less than one or greater than 10
+        let text;
+        if (isNaN(x) || x < 1 || x > 10) {
+          text = "Input not valid";
+        } else {
+          text = "Input OK";
+        }
+        document.getElementById("demo").innerHTML = text;
+      }
+    </script>
+  </body>
+</html>
