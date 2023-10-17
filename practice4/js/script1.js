@@ -1,4 +1,4 @@
-window.alert("selamat datang di halaman embedded script");
+window.alert("selamat datang di halaman external script");
 
 function hitung_luas_segitiga() {
   var a = parseFloat(document.getElementById("alas").value);
