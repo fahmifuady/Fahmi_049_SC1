@@ -82,35 +82,40 @@ $data_total = $conn->query($qtotal);
                 <?php
                 foreach ($data_mahasiswa as $index => $value) {
                 ?>
-                    <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between  mt-1">
-                            <div>
-                                <h6 class="my-0"><?php echo $value['nama_lengkap'] ?></h6>
-                                <small class="text-muted"><?php echo $value['alamat'] ?></small>
+                    <div class="card d-flex flex-row my-1">
+                        <div class="col-md-2">
+                            <img src="uploads/qiqi2.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body d-flex flex-row justify-content-between">
+                                <div class="d-flex flex-column">
+                                    <h6 class="my-0"><?php echo $value['nama_lengkap'] ?></h6>
+                                    <span class="text-muted">
+                                        <?php
+                                        foreach ($data_kelas as $id_kelas) {
+                                            if ($id_kelas['kelas_id'] == $value['kelas_id']) {
+                                                echo $id_kelas['nama'];
+                                            }
+                                        }
+                                        ?>
+                                    </span>
+                                    <small class="text-muted"><?php echo $value['alamat'] ?></small>
+                                </div>
+                                <div class="d-flex flex-column gap-2">
+                                    <a href="update_form.php?mahasiswa_id=<?php echo $value['mahasiswa_id'] ?>" type="button" class="close">
+                                        <span class="fa fa-pencil"></span>
+                                    </a>
+                                    <a href="hapus_data.php?mahasiswa_id=
+                                            <?php echo $value['mahasiswa_id'] ?>" type="button" class="close">
+                                        <span class="fa fa-trash"></span>
+                                    </a>
+                                </div>
                             </div>
-                            <span class="text-muted">
-                                <?php
-                                foreach ($data_kelas as $id_kelas) {
-                                    if ($id_kelas['kelas_id'] == $value['kelas_id']) {
-                                        echo $id_kelas['nama'];
-                                    }
-                                }
-                                ?>
-                            </span>
-                            <div class="d-flex gap-2">
-                                <a href="update_form.php?mahasiswa_id=<?php echo $value['mahasiswa_id'] ?>" type="button" class="close">
-                                    <span class="fa fa-pencil"></span>
-                                </a>
-                                <a href="hapus_data.php?mahasiswa_id=
-                                <?php echo $value['mahasiswa_id'] ?>" type="button" class="close">
-                                    <span class="fa fa-trash"></span>
-                                </a>
-                            </div>
-
-                        </li>
-                    <?php
+                        </div>
+                    </div>
+                <?php
                 }
-                    ?>
+                ?>
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Input Data</h4>
