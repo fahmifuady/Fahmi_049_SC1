@@ -28,6 +28,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Foto</th>
                             <th>Nim</th>
                             <th>Nama</th>
                             <th>Jenis Kelamin</th>
@@ -39,6 +40,9 @@
                         @forelse ($students as $mahasiswa)
                         <tr>
                             <th>{{$loop->iteration}}</th>
+                            <td>
+                                <img src="{{ url('') }}/{{ $mahasiswa->image}}" alt="" class="rounded" style="max-height: 30px; max-width: 30px; object-fit: contain">
+                            </td>
                             <td><a href=" {{ route('student.show',['student' => $mahasiswa->id]) }}">{{$mahasiswa->nim}}</a></td>
                             <td>{{$mahasiswa->name}}</td>
                             <td>

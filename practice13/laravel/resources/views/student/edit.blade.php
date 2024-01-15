@@ -15,24 +15,24 @@
             <div class="col-md-8 col-xl-6">
                 <h1>Edit Mahasiswa</h1>
                 <hr>
-                <form action="{{ route('student.update',['student' => $student->id]) }}" method="POST">
+                <form action="{{ route('student.update',['student' => $student->id]) }}" method="POST" enctype="multipart/form-data">
                     @method('PATCH')
                     @csrf
-                    <div class="form-group">
+                    <div class="form-group d-flex flex-column gap-2">
                         <label for="nim">NIM</label>
                         <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim" value="{{ old('nim') ?? $student->nim }}">
                         @error('nim')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-flex flex-column gap-2">
                         <label for="nama">Nama Lengkap</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="nama" name="nama" value="{{ old('name') ?? $student->name }}">
                         @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-flex flex-column gap-2">
                         <label>Jenis Kelamin</label>
                         <div>
                             <div class="form-check form-check-inline">
@@ -50,7 +50,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-flex flex-column gap-2">
                         <label for="jurusan">Jurusan</label>
                         <select class="form-control" name="jurusan" id="jurusan">
                             <option value="Teknik Informatika" {{ (old('departement') ?? $student->departement)==
@@ -73,11 +73,19 @@
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-flex flex-column gap-2">
                         <label for="alamat">Alamat</label>
                         <textarea class="form-control" id="alamat" rows="3" name="alamat">{{ old('alamat') ?? $student->address}}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary mb-2">Update</button>
+                    <div class="form-group">
+                        <label for="image">Gambar Profile</label>
+                        <br><img height="150px" src="{{url('')}}/{{$student->image}}" class="rounded" alt="">
+                        <input type="file" class="form-control-file" id="image" name="image">
+                        @error('image')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <button <button type="submit" class="btn btn-primary mb-2">Update</button>
                 </form>
             </div>
         </div>
