@@ -1,5 +1,7 @@
 <?php
 include "connection.php";
+session_start();
+
 $qkelas = "select * from kelas";
 $data_kelas = $conn->query($qkelas);
 
@@ -112,6 +114,9 @@ $data_total = $conn->query($qtotal);
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Input Data</h4>
+                <div class="mh-1">
+                    <?php include "read_messege.php" ?>
+                </div>
                 <form action="simpan_mahasiswa.php" method="POST">
                     <div class="mb-3">
                         <label for="nama_lengkap">Nama Lengkap</label>

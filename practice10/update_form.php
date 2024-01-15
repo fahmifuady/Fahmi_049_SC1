@@ -1,5 +1,7 @@
 <?php
 include "connection.php";
+session_start();
+
 $qkelas = "select * from kelas";
 $data_kelas = $conn->query($qkelas);
 
@@ -117,7 +119,10 @@ foreach ($conn->query($qselect_mahasiswa) as $value) {
                     ?>
             </div>
             <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Input Data</h4>
+                <h4 class="mb-3">Update Data</h4>
+                <div>
+                    <?php include "read_messege.php" ?>
+                </div>
                 <form action="simpan_mahasiswa.php" method="POST">
                     <input type="hidden" name="mahasiswa_id" value="<?php echo $data_select_mahasiswa['mahasiswa_id'] ?>">
 
