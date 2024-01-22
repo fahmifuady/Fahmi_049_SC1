@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminLTEController;
+use App\Http\Controllers\AdminLTEStudentController;
 
 
 /*
@@ -52,3 +54,14 @@ Route::get('/logout', [AdminController::class, 'logout'])
 
 Route::post('/login', [AdminController::class, 'process'])
     ->name('login.process');
+
+// AdminLTE
+// Route::get('/adminlte/index', 'AdminLTEController@index')
+//     ->name('adminlte.index');
+
+// that code above is not working, so i replace with this instead.
+Route::get('/adminlte/beranda', [AdminLTEController::class, 'index'])
+    ->name('adminlte.index');
+
+Route::get('/adminlte/student/create', [AdminLTEStudentController::class, 'create'])
+    ->name('adminlte.student.create');
