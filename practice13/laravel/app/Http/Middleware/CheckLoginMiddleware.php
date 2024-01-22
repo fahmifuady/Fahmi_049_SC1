@@ -18,7 +18,7 @@ class CheckLoginMiddleware
         if (session()->has('username')) {
             return $next($request);
         } else {
-            return redirect('/login')->with('pesan', "Maaf, silakan login terlebid dahulu.");
+            return redirect('/login')->with('pesan', "Maaf, silakan login terlebih dahulu.");
         }
     }
 }
